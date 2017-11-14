@@ -1,0 +1,17 @@
+AppBundle\Domain\TripMeasures:
+    type: entity
+    table: trip_measures
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    manyToOne:
+        trips:
+            targetEntity: AppBundle\Domain\Trips
+            joinColumn:
+                name: trip_id
+                referencedColumnName: id
+                cascade: ["all"]
+    fields:
+        distance:
+            type: float

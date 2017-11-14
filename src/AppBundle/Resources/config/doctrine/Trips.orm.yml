@@ -1,0 +1,12 @@
+AppBundle\Domain\Trips:
+    type: entity
+    table: trips
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+        measureInterval:
+            type: integer
