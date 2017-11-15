@@ -10,3 +10,7 @@ AppBundle\Domain\Trips:
             type: string
         measureInterval:
             type: integer
+    oneToMany:
+        tripMeasures:
+            targetEntity: AppBundle\Domain\TripMeasures
+            mappedBy: trips

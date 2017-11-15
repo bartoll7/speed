@@ -5,13 +5,13 @@ AppBundle\Domain\TripMeasures:
         id:
             type: integer
             generator: { strategy: AUTO }
-    manyToOne:
-        trips:
-            targetEntity: AppBundle\Domain\Trips
-            joinColumn:
-                name: trip_id
-                referencedColumnName: id
-                cascade: ["all"]
     fields:
         distance:
             type: float
+    manyToOne:
+        trips:
+            targetEntity: AppBundle\Domain\Trips
+            inversedBy: tripMeasures
+            joinColumn:
+                name: trip_id
+                referencedColumnName: id

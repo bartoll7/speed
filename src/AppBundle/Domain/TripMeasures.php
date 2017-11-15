@@ -22,7 +22,7 @@ class TripMeasures
     /**
      * @return int
      */
-    public function getId()
+    public function getId():int
     {
         return $this->id;
     }
@@ -30,7 +30,7 @@ class TripMeasures
     /**
      * @return Trips
      */
-    public function getTrips()
+    public function getTrips(): Trips
     {
         return $this->trips;
     }
@@ -38,7 +38,7 @@ class TripMeasures
     /**
      * @return float
      */
-    public function getDistance()
+    public function getDistance():float
     {
         return $this->distance;
     }

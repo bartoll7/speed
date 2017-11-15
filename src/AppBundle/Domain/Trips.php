@@ -2,6 +2,8 @@
 
 namespace AppBundle\Domain;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 class Trips
 {
     /**
@@ -20,9 +22,19 @@ class Trips
     private $measureInterval;
 
     /**
+     * @var ArrayCollection
+     */
+    private $tripMeasures;
+
+    public function __construct()
+    {
+        $this->tripMeasures = new ArrayCollection();
+    }
+
+    /**
      * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -30,7 +42,7 @@ class Trips
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -38,8 +50,16 @@ class Trips
     /**
      * @return int
      */
-    public function getMeasureInterval()
+    public function getMeasureInterval(): int
     {
         return $this->measureInterval;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getTripMeasures()
+    {
+        return $this->tripMeasures;
     }
 }
