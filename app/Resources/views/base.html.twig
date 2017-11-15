@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>trip</th>
+        <th>distance</th>
+        <th>measure interval</th>
+        <th>avg speed</th>
+    </tr>
+    {% for item in result %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.distance }}</td>
+            <td>{{ item.measureInterval }}</td>
+            <td>{{ item.avgSpeed }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
 </html>
