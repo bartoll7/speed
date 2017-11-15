@@ -1,0 +1,12 @@
+services:
+    app.trip.repository:
+        class: AppBundle\Repository\DoctrineTripRepository
+        arguments: ['@doctrine.orm.default_entity_manager']
+
+    app.avg_speed.generator:
+        class: AppBundle\Generator\AvgSpeedGenerator
+        arguments: ['@app.trip.repository']
+
+    app.avg_view.factory:
+        class: AppBundle\Factory\AvgViewFactory
+        arguments: ['@app.avg_speed.generator', '@app.trip.repository']
